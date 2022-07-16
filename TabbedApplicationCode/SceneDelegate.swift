@@ -24,31 +24,32 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func createRedNC() -> UINavigationController {
         let redVC = RedViewController()
-        redVC.title = "Red View"
-        redVC.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 0)
+        redVC.title = "Red Screen"
+        
         
         return UINavigationController(rootViewController: redVC)
     }
     
     func createGreenNC() -> UINavigationController {
         let greenVC = GreenViewController()
-        greenVC.title = "Green View"
+        greenVC.title = "Green Screen"
         
         return UINavigationController(rootViewController: greenVC)
     }
     
     func createBlueNC() -> UINavigationController {
         let blueVC = BlueViewController()
-        blueVC.title = "Blue View"
-        
+        blueVC.title = "Blue Screen"
+    
         return UINavigationController(rootViewController: blueVC)
     }
     
     func createTabBar() -> UITabBarController {
         let tabBar = UITabBarController()
-        UITabBar.appearance().tintColor = .systemMint
+        UITabBar.appearance().tintColor = .black
+        UITabBar.appearance().backgroundColor = .white
+       
         tabBar.viewControllers = [createRedNC(), createGreenNC(), createBlueNC()]
-        
         
         return tabBar
     }
